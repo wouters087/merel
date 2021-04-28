@@ -1,0 +1,152 @@
+body {
+  margin: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea  {
+  background-color: #F2E9E6;
+  font-family: GT-Walsheim, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 48px;
+  line-height: 1.15em;
+  color: #EF5A2F;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+h2 {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 30px;
+  line-height: 1em;
+}
+
+h3 {
+  font-family: clarendon-urw-extra-wide, serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1em;
+}
+
+.site {
+	margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  animation: fadein 2s;
+}
+
+.intro-text{
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 150px;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+
+}
+.image-container.anchor-left{
+  transform-origin: left;
+}
+
+}
+.image-container.anchor-top{
+  transform-origin: top;
+}
+
+}
+.image-container.anchor-right{
+  transform-origin: right top;
+}
+
+
+.image-container:hover{
+  z-index: 2;
+  border-radius: 5px;
+  transform: scale(8);
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.22);
+}
+
+.image-container{
+  position: relative;
+  top: 6px;
+  z-index: 1;
+  display: inline-block;
+  overflow: hidden;
+  width: 51px;
+  height: 51px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.12);
+  /* transition-property: width, transform, border-radius, box-shadow; */
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  outline-color: inherit;
+  outline-style: none;
+  cursor: pointer;
+  outline-width: 0px;
+}
+
+.image-container img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact h3 {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #B4BEB2;
+  margin: 0;
+}
+
+.contact h2 {
+  margin: 8px 0 50px 0;
+}
+
+.info {
+  margin-top: 1.2em;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+/*--------------------------------------------------------------
+CSS Grid layout
+--------------------------------------------------------------*/
+
+/* Check for CSS Grid support: */
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 850px) {
+
+		.site {
+			max-width: none;
+      display: grid;
+			grid-template-columns: repeat(2, minmax(auto, 25em)) 1fr;
+		}
+
+		.intro-text {
+			grid-column: 1/3;
+		}
+
+		.contact {
+			grid-column: 2 span;
+		}
+
+	}
+
+}
