@@ -7,17 +7,30 @@ button,
 input,
 select,
 textarea {
-  /* background-color: #F2E9E6; */
+  background-color: #46795B;
   font-family: GT-Walsheim, sans-serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 48px;
-  line-height: 1.15em;
-  color: #fff;
+  font-size: 68px;
+  line-height: 1.2em;
+  color: #E5E5E5;
 }
 
-body {
-	background: linear-gradient(-45deg, #D6D2D8, #707089, #251957, #A0A4B6;
+@media screen and (max-width: 849px) {
+
+  body,
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 45px;
+    line-height: 1.2em;
+  }
+
+}
+
+/* body {
+	background: linear-gradient(-45deg, #D6D2D8, #707089, #251957, #A0A4B6);
 	background-size: 400% 400%;
 	animation: gradient 25s ease infinite;
 }
@@ -32,7 +45,7 @@ body {
 	100% {
 		background-position: 0% 50%;
 	}
-}
+} */
 
 h1,
 h2,
@@ -100,13 +113,13 @@ h3 {
 
 .image-container{
   position: relative;
-  top: 6px;
+  top: 10px;
   z-index: 1;
   display: inline-block;
   overflow: hidden;
-  width: 51px;
-  height: 51px;
-  border-radius: 10px;
+  width: 62px;
+  height: 62px;
+  border-radius: 31px;
   box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
   /* transition-property: width, transform, border-radius, box-shadow; */
   transition-duration: 0.4s;
@@ -117,10 +130,26 @@ h3 {
   outline-width: 0px;
 }
 
+@media screen and (max-width: 849px) {
+
+  .image-container{
+    top: 6px;
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+  }
+}
+
 .image-container img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.button {
+  background-color: #B4BEB2;
+  padding: 8px 25px;
+  border-radius: 30px;
 }
 
 .contact {
@@ -150,20 +179,37 @@ CSS Grid layout
 
 	@media screen and (min-width: 850px) {
 
-		.site {
+		/* .site {
 			max-width: none;
       display: grid;
 			grid-template-columns: repeat(2, minmax(auto, 25em)) 1fr;
-		}
+		} */
+
+    .site {
+      max-width: none;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
 
 		.intro-text {
-			grid-column: 1/3;
+			grid-column: 1/6;
 		}
 
-		.contact {
-			grid-column: 2 span;
-		}
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 70px;
+      grid-gap: 1em;
+    }
 
 	}
+
+  @media screen and (max-width: 849px) {
+
+    .contact {
+			grid-column: 1/4;
+		}
+
+  }
 
 }
