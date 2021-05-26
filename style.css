@@ -1,19 +1,34 @@
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
 body {
   margin: 0;
 }
 
 body,
-button,
 input,
 select,
 textarea {
-  background-color: #46795B;
+  background-color: #7B9E83;
   font-family: GT-Walsheim, sans-serif;
   font-weight: bold;
   font-style: normal;
   font-size: 68px;
   line-height: 1.2em;
-  color: #E5E5E5;
+  color: #fff;
+}
+
+button {
+  color: #B9CDBD;
+  font-family: GT-Walsheim, sans-serif;
+  font-weight: medium;
+  font-style: normal;
+  font-size: 23px;
 }
 
 @media screen and (max-width: 849px) {
@@ -60,30 +75,31 @@ a {
   /* clear: both; */
   font-weight: normal;
   font-style: normal;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1em;
   text-decoration: none;
-  color: #EF5A2F;
+  color: #fff;
   transition: 0.5s;
 }
 
 a:hover {
-  color: #B84F35;
+  color: #fff;
   transition: 0.5s;
 }
 
 h3 {
-  font-family: clarendon-urw-extra-wide, serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   font-size: 15px;
   line-height: 1em;
+  letter-spacing: 0.1em;
 }
 
 .site {
 	margin: 0 auto;
   width: 100%;
-  overflow: hidden;
+  padding-bottom: 100px;
+  /* overflow: hidden; */
 
   -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
   animation: fadein 3s;
@@ -92,7 +108,7 @@ h3 {
 .intro-text{
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 }
 
 @keyframes fadein {
@@ -147,9 +163,14 @@ h3 {
 }
 
 .button {
-  background-color: #B4BEB2;
-  padding: 8px 25px;
+  background-color: #fff;
+  padding: 14px 35px;
   border-radius: 30px;
+  color: #46795B;
+}
+
+.button:hover {
+  background-color: #0D2E22;
 }
 
 .contact {
@@ -157,9 +178,9 @@ h3 {
 }
 
 .contact h3 {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #B4BEB2;
+  color: #B9CDBD;
   margin: 0;
   line-height: 10px;
 }
@@ -171,29 +192,107 @@ h3 {
 }
 
 /*--------------------------------------------------------------
+Navigation:
+--------------------------------------------------------------*/
+.main-nav {
+	padding: 1em;
+	font-size: 1.1em;
+	color: white;
+  background-color: #0D2E22;
+}
+
+.trigger {
+	display: none;
+	padding: .1em .5em;
+	color: white;
+	background: #0D2E22;
+	border: none;
+	transform: rotate(90deg);
+}
+
+.trigger:focus,
+.trigger:hover {
+}
+
+.trigger:focus {
+}
+
+.main-nav ul {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.main-nav a {
+	display: block;
+	padding: .4em 1em;
+	color: white;
+	text-decoration: none;
+}
+
+.main-nav a:focus,
+.main-nav a:hover {
+	text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
 CSS Grid layout
 --------------------------------------------------------------*/
 
 /* Check for CSS Grid support: */
 @supports (grid-area: auto) {
 
-	@media screen and (min-width: 850px) {
-
-		/* .site {
-			max-width: none;
-      display: grid;
-			grid-template-columns: repeat(2, minmax(auto, 25em)) 1fr;
-		} */
+	@media screen and (min-width: 320px) {
 
     .site {
-      max-width: none;
+      position: relative;
+      left: -310px;
+      /* overflow-x: hidden; */
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: 360px calc(100% - 50px);
+      grid-template-areas:
+        "nav main main"
+        "nav sidebar sidebar"
+        "nav footer footer";
+      transition: left .6s;
     }
 
-		.intro-text {
-			grid-column: 1/6;
+    .reveal {
+			left: 0;
 		}
+
+    .intro-text {
+			grid-area: main;
+		}
+
+    .main-nav {
+      grid-area: nav;
+    }
+
+    .main-nav ul {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+    }
+
+    .open ul {
+      display: flex;
+    }
+
+    .trigger {
+      position: fixed;
+      display: block;
+      top: 1.5em;
+      left: -15px;
+      transition: left .6s;
+    }
+
+    .reveal .trigger {
+      left: 295px;
+    }
 
     .info {
       display: grid;
@@ -203,13 +302,5 @@ CSS Grid layout
     }
 
 	}
-
-  @media screen and (max-width: 849px) {
-
-    .contact {
-			grid-column: 1/4;
-		}
-
-  }
 
 }
