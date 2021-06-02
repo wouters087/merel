@@ -21,6 +21,7 @@ textarea {
   font-size: 68px;
   line-height: 1.2em;
   color: #fff;
+	height: 100%;
 }
 
 button {
@@ -34,7 +35,6 @@ button {
 @media screen and (max-width: 849px) {
 
   body,
-  button,
   input,
   select,
   textarea {
@@ -90,15 +90,17 @@ a:hover {
 h3 {
   font-weight: 700;
   font-style: normal;
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
+	text-transform: uppercase;
 }
 
 .site {
+	position: relative;
+	min-height: 100vh;
 	margin: 0 auto;
   width: 100%;
-  padding-bottom: 100px;
   /* overflow: hidden; */
 
   -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
@@ -108,7 +110,7 @@ h3 {
 .intro-text{
   padding-left: 40px;
   padding-right: 40px;
-  padding-bottom: 120px;
+  padding-bottom: 250px;
 }
 
 @keyframes fadein {
@@ -174,31 +176,39 @@ h3 {
 }
 
 .contact {
-  margin: 0 0 35px 0;
+  margin: 0;
 }
 
 .contact h3 {
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: #B9CDBD;
   margin: 0;
-  line-height: 10px;
+}
+
+.contact-info {
+	margin: 0;
+	padding-top: 50px;
 }
 
 .info {
-  margin-top: 1.5em;
   padding-right: 40px;
   padding-left: 40px;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
 }
 
 /*--------------------------------------------------------------
 Navigation:
 --------------------------------------------------------------*/
 .main-nav {
-	padding: 1em;
+	padding-top: 0.5em;
+	padding-left: 0.2em;
 	font-size: 1.1em;
 	color: white;
   background-color: #0D2E22;
+	height: 100%;
 }
 
 .trigger {
@@ -210,8 +220,8 @@ Navigation:
 	transform: rotate(90deg);
 }
 
-.trigger:focus,
 .trigger:hover {
+	color: #B9CDBD;
 }
 
 .trigger:focus {
@@ -228,7 +238,7 @@ Navigation:
 
 .main-nav a {
 	display: block;
-	padding: .4em 1em;
+	padding: .2em 1em;
 	color: white;
 	text-decoration: none;
 }
@@ -300,6 +310,10 @@ CSS Grid layout
       grid-auto-rows: 70px;
       grid-gap: 1em;
     }
+
+		#footer {
+			grid-area: footer;
+		}
 
 	}
 
