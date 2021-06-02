@@ -14,7 +14,7 @@ body,
 input,
 select,
 textarea {
-  background-color: #7B9E83;
+  background-color: #B6A6CA;
   font-family: GT-Walsheim, sans-serif;
   font-weight: bold;
   font-style: normal;
@@ -89,73 +89,10 @@ h3 {
   animation: fadein 3s;
 }
 
-.intro-text{
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 250px;
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 
-}
-
-.image-container.anchor-top{
-  transform-origin: top;
-}
-
-.image-container:hover{
-  z-index: 2;
-  border-radius: 5px;
-  transform: scale(4);
-  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.25);
-}
-
-.image-container{
-  position: relative;
-  top: 10px;
-  z-index: 1;
-  display: inline-block;
-  overflow: hidden;
-  width: 62px;
-  height: 62px;
-  border-radius: 31px;
-  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
-  /* transition-property: width, transform, border-radius, box-shadow; */
-  transition-duration: 0.4s;
-  transition-timing-function: ease-in-out;
-  outline-color: inherit;
-  outline-style: none;
-  cursor: pointer;
-  outline-width: 0px;
-}
-
-@media screen and (max-width: 849px) {
-
-  .image-container{
-    top: 6px;
-    width: 46px;
-    height: 46px;
-    border-radius: 23px;
-  }
-}
-
-.image-container img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.button {
-  background-color: #fff;
-  padding: 14px 35px;
-  border-radius: 30px;
-  color: #46795B;
-}
-
-.button:hover {
-  background-color: #0D2E22;
 }
 
 .contact {
@@ -182,6 +119,18 @@ h3 {
 }
 
 /*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+/*--------------------------------------------------------------
 Navigation:
 --------------------------------------------------------------*/
 .main-nav {
@@ -189,7 +138,7 @@ Navigation:
 	padding-left: 0.2em;
 	font-size: 1.1em;
 	color: white;
-  background-color: #0D2E22;
+  background-color: #0F084B;
 	height: 100%;
 }
 
@@ -197,7 +146,7 @@ Navigation:
 	display: none;
 	padding: .1em .5em;
 	color: white;
-	background: #0D2E22;
+	background: #0F084B;
 	border: none;
 	transform: rotate(90deg);
 }
@@ -229,6 +178,42 @@ Navigation:
 .main-nav a:hover {
 	text-decoration: underline;
 }
+
+/*--------------------------------------------------------------
+Cards:
+--------------------------------------------------------------*/
+
+.cards {
+	margin: 1em;
+	padding: 0;
+	list-style-type: none;
+}
+
+.cards a {
+	display: block;
+	margin-bottom: 1em;
+	text-decoration: none;
+}
+
+.caption {
+	padding: 1em;
+	background: hsla(246, 40%, 30%, .6);
+	color: white;
+	font-size: 1.2em;
+	transition: all .4s;
+}
+
+a:focus .caption,
+a:hover .caption {
+	background: hsla(246, 40%, 30%, 1);
+}
+
+.caption-title {
+	margin: 0;
+	font-size: 1.4em;
+	line-height: 1.1em;
+}
+
 
 /*--------------------------------------------------------------
 CSS Grid layout
