@@ -190,7 +190,7 @@ Navigation:
 	font-size: 1.1em;
 	color: white;
   background-color: #0D2E22;
-	height: 100%;
+	/* height: 100%; */
 }
 
 .trigger {
@@ -247,7 +247,6 @@ CSS Grid layout
       grid-template-columns: 360px calc(100% - 50px);
       grid-template-areas:
         "nav main main"
-        "nav sidebar sidebar"
         "nav footer footer";
       transition: left .6s;
     }
