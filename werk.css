@@ -201,7 +201,7 @@ Cards:
 }
 
 .card > img {
-	height: 400px;
+	height: 60vh;
 }
 
 .cards a {
@@ -286,6 +286,15 @@ CSS Grid layout
 			margin: 10px 0px 150px 0px;
 		}
 
+		.cards {
+			display: grid;
+			grid-template-columns: 1fr;
+			margin: 30px;
+			grid-gap: 30px;
+			padding: 0px;
+			justify-content: center;
+		}
+
 		.cards a {
 			margin-bottom: 0;
 		}
@@ -328,25 +337,13 @@ CSS Grid layout
       column-gap: 1em;
     }
 
-		/* .cards {
-			max-width: none;
-			margin: 0;
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			justify-content: center;
-		} */
-
 		.cards {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			margin: 40px;
 			grid-gap: 40px;
 			padding: 0px;
-			background-color: red;
-		}
-
-		.double-heigh {
-			grid-row: 1/3;
+			justify-content: center;
 		}
 
 
