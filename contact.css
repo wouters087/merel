@@ -14,18 +14,17 @@ body,
 input,
 select,
 textarea {
-  background-color: #7B9E83;
+  background-color: #A6BBCA;
   font-family: GT-Walsheim, sans-serif;
-  font-weight: bold;
   font-style: normal;
-  font-size: 68px;
+  font-size: 28px;
   line-height: 1.2em;
-  color: #fff;
+  color: #133971;
 	height: 100%;
 }
 
 button {
-  color: #B9CDBD;
+  color: #133971;
   font-family: GT-Walsheim, sans-serif;
   font-weight: medium;
   font-style: normal;
@@ -38,7 +37,7 @@ button {
   input,
   select,
   textarea {
-    font-size: 45px;
+    font-size: 28px;
     line-height: 1.2em;
   }
 
@@ -69,13 +68,30 @@ a:hover {
   transition: 0.5s;
 }
 
-h3 {
+h2 {
+  ont-weight: 700;
+  font-style: normal;
+  font-size: 28px;
+  line-height: 1em;
+}
+
+label {
   font-weight: 700;
   font-style: normal;
   font-size: 13px;
   line-height: 1em;
   letter-spacing: 0.15em;
 	text-transform: uppercase;
+}
+
+.title-small {
+  margin: 0;
+  padding-bottom: .15em;
+}
+
+.content {
+  margin: 0 0 60px 0;
+  max-width: 470px;
 }
 
 .site {
@@ -88,46 +104,16 @@ h3 {
   animation: fadein 3s;
 }
 
-.intro-text{
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 250px;
-}
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 
 }
 
-.image-container.anchor-top{
-  transform-origin: top;
-}
-
-.image-container:hover{
-  z-index: 2;
-  border-radius: 5px;
-  transform: scale(4);
-  box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.25);
-}
-
-.image-container{
-  position: relative;
-  top: 10px;
-  z-index: 1;
-  display: inline-block;
-  overflow: hidden;
-  width: 62px;
-  height: 62px;
-  border-radius: 31px;
-  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.1);
-  /* transition-property: width, transform, border-radius, box-shadow; */
-  transition-duration: 0.4s;
-  transition-timing-function: ease-in-out;
-  outline-color: inherit;
-  outline-style: none;
-  cursor: pointer;
-  outline-width: 0px;
+.block-text{
+  padding-left: 80px;
+  padding-top: 80px;
+  padding-right: 40px;
 }
 
 @media screen and (max-width: 849px) {
@@ -146,51 +132,52 @@ h3 {
   object-fit: cover;
 }
 
-.button {
-  background-color: #fff;
-  padding: 14px 35px;
-  border-radius: 30px;
-  color: #46795B;
-}
-
-.button:hover {
-  background-color: #0D2E22;
-}
-
 .contact {
-  margin: 0;
-	line-height: 0.8em;
-}
-
-.contact h3 {
-  color: #00000050;
-  margin: 0;
+  width: 100%;
+  display: table-row;
 }
 
 .contact a {
-  color: #00000050;
+  color: #133971;
+  font-size: 20px;
 }
 
-.info {
+.tag {
+  display: table-cell;
   padding-right: 40px;
-  padding-left: 40px;
-}
-
-#footer {
-	position: absolute;
-	bottom: 15px;
 }
 
 @media screen and (max-width: 849px) {
 
-  .contact {
+  .info {
     line-height: 1.2em;
 		margin: 40px 0px;
   }
 
-	#footer {
-		position: relative;
-	}
+  .block-text{
+    padding-left: 40px;
+    padding-top: 80px;
+    padding-right: 40px;
+  }
+
+  .tag {
+    display: table-cell;
+    padding-right: 20px;
+  }
+
+}
+
+@media screen and (max-width: 445px) {
+
+  .tag {
+    display: block;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+
+  .content {
+    margin: 0 0 40px 0;
+  }
 
 }
 
@@ -202,7 +189,7 @@ Navigation:
 	padding-left: 0.2em;
 	font-size: 1.1em;
 	color: white;
-  background-color: #0D2E22;
+  background-color: #133971;
 	/* height: 100%; */
 }
 
@@ -210,13 +197,13 @@ Navigation:
 	display: none;
 	padding: .1em .5em;
 	color: white;
-	background: #0D2E22;
+	background: #133971;
 	border: none;
 	transform: rotate(90deg);
 }
 
 .trigger:hover {
-	color: #B9CDBD;
+	color: #A6BBCA;
 }
 
 .trigger:focus {
@@ -226,8 +213,7 @@ Navigation:
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin: 0;
-	padding: 0;
+	padding: 0 .3em;
 	list-style-type: none;
 }
 
@@ -268,7 +254,7 @@ CSS Grid layout
 			left: 0;
 		}
 
-    .intro-text {
+    .block-text {
 			grid-area: main;
 		}
 
@@ -298,19 +284,6 @@ CSS Grid layout
       left: 295px;
     }
 
-		#footer {
-			grid-area: footer;
-		}
-
 	}
-
-	@media screen and (min-width: 629px) {
-
-		.info {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 80px;
-      column-gap: 1em;
-    }
 
 }
