@@ -32,6 +32,10 @@ button {
   font-size: 23px;
 }
 
+figure {
+	margin: 0;
+}
+
 @media screen and (max-width: 849px) {
 
   body,
@@ -128,6 +132,7 @@ img {
 	border: 0;
 	width: 100%;
 	height: auto;
+	overflow: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -184,9 +189,19 @@ Cards:
 --------------------------------------------------------------*/
 
 .cards {
-	margin: 1em;
+	margin: 0;
 	padding: 0;
 	list-style-type: none;
+}
+
+.card-item img {
+	border-radius: 20px;
+	object-fit: cover;
+	box-shadow: 0px 45px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card > img {
+	height: 400px;
 }
 
 .cards a {
@@ -206,6 +221,7 @@ Cards:
 a:focus .caption,
 a:hover .caption {
 	background: hsla(246, 81%, 16%, 1);
+	border-radius: 20px;
 }
 
 .caption-title {
@@ -267,13 +283,7 @@ CSS Grid layout
     }
 
 		.main-area {
-			display: grid;
-			margin: 20px 0px 150px 0px;
-		}
-
-		.cards {
-			margin: 0;
-			grid-row-gap: 40px;
+			margin: 10px 0px 150px 0px;
 		}
 
 		.cards a {
@@ -318,12 +328,25 @@ CSS Grid layout
       column-gap: 1em;
     }
 
-		.cards {
+		/* .cards {
 			max-width: none;
 			margin: 0;
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			justify-content: center;
+		} */
+
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin: 40px;
+			grid-gap: 40px;
+			padding: 0px;
+			background-color: red;
+		}
+
+		.double-heigh {
+			grid-row: 1/3;
 		}
 
 
